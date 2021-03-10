@@ -94,6 +94,7 @@ double myDouble = myInt;       // Automatic casting: int to double
 ```c#
 	double -> float -> long -> int -> char
 ```
+- 
 	- Type Conversion Methods (___005.cs___)
 ```c#
 /*
@@ -114,3 +115,123 @@ Console.WriteLine(Convert.ToDouble(myInt));    // convert int to double
 Console.WriteLine(Convert.ToInt32(myDouble));  // convert double to int
 Console.WriteLine(Convert.ToString(myBool));   // convert bool to string
 ```
+
+- [Boxing and and unboxing(___007.cs___)](https://www.tutorialsteacher.com/articles/boxing-unboxing-in-csharp)
+![](https://www.tutorialsteacher.com/Content/images/articles/csharp/boxing.PNG)
+![](https://www.tutorialsteacher.com/Content/images/articles/csharp/unboxing.PNG)
+```C#
+// Boxing
+int i = 100;
+object obj = i;
+Console.WriteLine(obj);
+
+//Unboxing
+object objc = 2000;
+int ij = (int)objc;
+Console.WriteLine(ij);
+```
+- Enum and constant(___008.cs-009.cs___)
+```c#
+// enum inside class and outide class
+// enum 
+enum Day{
+	sun,
+	mon,
+	tue,
+	wed =67,
+	thu,
+	fri,
+	sat
+}
+public static void Main(){
+	Console.WriteLine(Day.sun);
+	Console.WriteLine((int)Day.sun);
+	foreach(string name in Enum.GetNames(typeof(Day))){
+		Console.WriteLine(name);
+	}
+	foreach(int value in Enum.GetValues(typeof(Day))){
+		Console.WriteLine($"{Enum.GetName(typeof(Day),value)} : {value}");
+	}
+}
+
+// enum in switch
+enum Level{
+	low,
+	medium,
+	high
+}
+public static void Main(){
+	Level i =  Level.medium;
+	switch(i){
+		case Level.low : Console.WriteLine("Low Level");
+						 break;
+		case Level.medium : Console.WriteLine("Medium Level");
+						 break;
+		case Level.high : Console.WriteLine("High Level");
+						 break;
+	}
+}
+```
+- Control Statements
+	- C# offers three types of control statements:
+    	- Selection Statements – This consists of if, else, switch, and case branching.
+    	- Iteration Statements – This consists of do, for, foreach, and while looping.
+    	- Jump Statements – This consists of break, continue, return, and goto statements.
+- Math.Round()  (___0010.cs___)
+```c#
+Math.Round(12.45) // 12
+Math.Round(12.56d) // 13  --> d is Double
+Math.Round(12.5m) // 13  ---> m means Decimal
+Math.Round(12.34567,2)  // 12.35  --> round upto 2 decimal points
+```
+- string(___011.cs___)
+- Booleans(___012.cs___)
+```c#
+//bool keyword used
+bool flag_f = false;
+bool flag_t = true;
+
+Console.WriteLine(flag_f);
+Console.WriteLine(flag_t);
+```
+-  if, else if,else
+```
+same as in c
+```
+- switch case (___013.cs___)
+- for loop, while loop, do while loop
+```
+same as in c
+```
+- foreach loop(___014.cs___)
+- Array(___015.cs-017.cs___)
+```C#
+// number of ways to create array
+
+
+// Create an array of four elements, and add values later
+string[] cars = new string[4];
+
+// Create an array of four elements and add values right away 
+string[] cars = new string[4] {"Volvo", "BMW", "Ford", "Mazda"};
+
+// Create an array of four elements without specifying the size 
+string[] cars = new string[] {"Volvo", "BMW", "Ford", "Mazda"};
+
+// Create an array of four elements, omitting the new keyword, and without specifying the size
+string[] cars = {"Volvo", "BMW", "Ford", "Mazda"}; // this method is faster and easier to read.
+
+// However, you should note that if you declare an array and initialize it later, you have to use the new keyword:
+
+// Declare an array
+string[] cars;
+// Add values, using new
+cars = new string[] {"Volvo", "BMW", "Ford"};
+- // Add values without using new (this will cause an error)
+- cars = {"Volvo", "BMW", "Ford"};
+
+```
+- Ref and Out keywords
+	- ref and out both are same at compile time but different at run time
+	- ref is bi-directional while out is uni-directional
+	- out --> this returns the value of passed parameters only
