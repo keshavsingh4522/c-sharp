@@ -1,0 +1,3 @@
+- Events
+	- A mechanism for communication between objects
+	- loosly bounded
