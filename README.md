@@ -117,6 +117,7 @@ Console.WriteLine(Convert.ToString(myBool));   // convert bool to string
 ```
 
 - [Boxing and and unboxing(___007.cs___)](https://www.tutorialsteacher.com/articles/boxing-unboxing-in-csharp)
+
 ![](https://www.tutorialsteacher.com/Content/images/articles/csharp/boxing.PNG)
 ![](https://www.tutorialsteacher.com/Content/images/articles/csharp/unboxing.PNG)
 ```C#
@@ -231,7 +232,26 @@ cars = new string[] {"Volvo", "BMW", "Ford"};
 - cars = {"Volvo", "BMW", "Ford"};
 
 ```
-- Ref and Out keywords
+- Ref and Out keywords (___018.cs-019.cs___)
 	- ref and out both are same at compile time but different at run time
 	- ref is bi-directional while out is uni-directional
 	- out --> this returns the value of passed parameters only
+- Exception handling(___020.cs___)
+```c#
+try{
+	// try block
+}
+catch(Exception e)
+{
+	// catch block
+}
+finally(){
+	// finally block
+}
+
+
+// create error
+throw new Exception("error message");
+throw new ArithmeticException("error message");
+```
+- OOP in c#
